@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tarefas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Minhas Tarefas</h1>
+
+    <form method="POST">
+        <input type="text" name="tarefa" placeholder="Digite uma tarefa" required>
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Tarefas cadastradas:</h2>
+
+    <ul>
+        {% for tarefa in tarefas %}
+            <li>{{ tarefa }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Voltar</a>
+
+</body>
+</html>
